@@ -1,0 +1,108 @@
+#include <stdio.h>
+#include <stdlib.h>
+int insertion ();
+    int display();
+        int skip();
+struct node
+{
+    int data;
+    struct node *next;
+    struct node * prev;
+    
+}*head,*temp,*newnode;
+
+
+int main()
+{
+   insertion ();
+   display();
+    skip();
+    display();
+
+}
+
+int insertion ()
+{
+    int choice=1;
+    
+    while(choice==1)
+    {
+        newnode=malloc (sizeof(struct node));
+        printf("enter data\n");
+        scanf("%d",&newnode->data);
+        newnode -> next=NULL;
+        
+        if (head==0)
+        {
+            head= newnode;
+            newnode->next=head;
+            head->prev=newnode;
+            
+        }
+        else
+        {
+            temp=head;
+            while(temp->next !=head)
+            {
+                temp=temp->next;
+                
+            }
+            temp->next =newnode;
+            newnode->next=head;
+            head->prev=newnode;
+        }
+        
+        printf("enter the choice 0 or 1: ");
+        scanf("%d",&choice);
+    }
+}
+    
+    
+    int display()
+    {
+        temp=head;
+        while(temp->next!=head)
+        {
+            printf("%d\n",temp->data);
+            temp=temp->next;
+        }
+        printf("%d\n",temp->data);
+    }
+
+    int skip()
+    {
+        int s,i,c=1;
+        printf("enter the no of elements to skip\n");
+        scanf("%d",&s);
+        
+   
+    while(c==1)
+    {  temp=head;
+        for(i=1;i<=s;i++)
+        {
+            temp=temp->next;
+        }
+        temp->next=temp->prev->next;
+        temp->prev=temp->next->prev;
+        free(temp);
+        
+        
+                temp=head;
+        while(temp->next!=head)
+        {
+            printf("%d\n",temp->data);
+            temp=temp->next;
+        }
+        printf("%d\n",temp->data);
+        
+        
+         printf("enter the choice 0 or 1: ");
+        scanf("%d",&c);
+        
+    }
+    
+        
+    }
+    
+    
+
