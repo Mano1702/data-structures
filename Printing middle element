@@ -1,0 +1,75 @@
+#include <stdio.h>
+#include<stdlib.h>
+int insertion(int count);
+int midelement(int count);
+void display();
+struct node
+{
+    int data;
+    struct node *next;
+}
+*newnode,*head,*temp;
+int main()
+{ 
+    int count=1,d;
+   d= insertion(count);
+   midelement(d);
+    display();
+    
+}
+    
+int insertion(int count)
+{
+    int choice=1;
+    while (choice==1)
+    {
+        newnode= malloc(sizeof(struct node));
+        printf("enter the data");
+        scanf("%d",&newnode->data);
+        newnode->next=0;
+        if (head==0)
+        {
+            head=newnode;
+        }
+        else
+        {
+            temp=head;
+            while(temp->next!=0)
+            {
+                temp=temp->next;
+            }
+            temp->next=newnode;
+            
+        count++;
+    }
+
+printf("enter your choice");
+scanf("%d",&choice);
+}
+return count;
+}
+void display()
+ { 
+     printf("The elements are\n");
+     temp=head;
+     while(temp->next!=0)
+     {
+         printf("%d\n",temp->data);
+         temp=temp->next;
+     }
+     printf("%d\n",temp->data);
+ }
+int midelement(int count)
+ { 
+     int i;
+      printf("length id %d\n",count);
+     printf("The mid elements is\n");
+     temp=head;
+    for(i=0;i<(count/2);i++)
+     {
+         temp=temp->next;
+     }
+     printf("%d\n",temp->data);
+ }
+
+
