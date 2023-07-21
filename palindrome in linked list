@@ -1,0 +1,96 @@
+#include<stdio.h>
+#include<stdlib.h>
+int insert();
+void display();
+void palindrome(int a);
+
+struct node
+{
+    int data;
+    struct node*next;
+     struct node*prev;
+    
+}*newnode,*temp,*head,*tail;
+
+
+void main()
+    { 
+        int a;
+       a= insert();
+        display();
+        palindrome(a);
+
+    }
+    int insert()
+    {
+        int count=0,choice=1;
+        while(choice==1)
+    {
+        newnode=malloc(sizeof(struct node));
+        printf("enter the data");
+        scanf("%d",&newnode->data);
+        newnode->next=0;
+        if(head==0&&tail==0)
+        {
+          tail=head=newnode;
+            
+        }
+        else
+        {
+            temp=tail;
+            while(temp->next!=0)
+            {
+             temp=temp->next;
+            }
+            temp->next=newnode;
+            newnode->prev=temp;
+            tail=newnode;
+
+
+        }
+        printf("enter the choice");
+        scanf("%d",&choice);
+        count++;
+    }
+    }
+   
+    void display()
+        {
+            temp=head;
+        
+         while(temp->next!=0)
+         {
+             printf("%d ",temp->data);
+             temp=temp->next;
+         }
+         printf("%d",temp->data);
+         
+        }
+        
+        void palindrome(int a)
+        {
+            int i;
+             if(head->data==tail->data)
+             {
+            for(i=1;i<=(a/2);i++)
+            {
+                if(head->data==tail->data)
+                {
+                    head=head->next;
+                    tail=tail->prev;
+                }
+                else
+                {
+                    printf("it is not a palindrome");
+                }
+               
+                
+            }
+             }
+             else 
+                {
+                    printf("\nit is not a palindrome");
+                }
+            
+        }
+
