@@ -1,0 +1,126 @@
+#include <stdio.h>
+#include<stdlib.h>
+int insertion1();
+void insertion2();
+void display1();
+void display2();
+ void addition(int a);
+
+struct node1
+{
+    int data1;
+    struct node1 *next;
+}*newnode1,*temp1,*head1;
+struct node2
+{
+    int data2;
+    struct node2 *next;
+}*newnode2,*temp2,*head2;
+
+
+int main()
+{
+   int a,count=0; 
+  a= insertion1(count);
+  printf("count is %d\n",a);
+    insertion2();
+    display1();
+    display2();
+     addition(a);
+
+
+}
+int insertion1(int count)
+{
+    int choice=1;
+    while(choice==1)
+    {
+    newnode1=malloc(sizeof(struct node1));
+    printf("Enter the data of node 1 ");
+    scanf("%d",&newnode1->data1);
+    newnode1->next=0;
+    if(head1==0)
+    {
+        head1=newnode1;
+    }
+    else
+    { 
+        temp1=head1;
+        while(temp1->next!=0)
+        {
+            temp1=temp1->next;
+        }
+        temp1->next = newnode1;
+        
+    }
+    printf("Enter the choice");
+    scanf("%d",&choice);
+    count++;
+    }
+    return count;
+}
+void display1()
+ {
+          printf("node1 data \n");
+
+     temp1=head1;
+     while(temp1->next!=0)
+     {
+         printf("%d\n",temp1->data1);
+         temp1=temp1->next;
+     }
+     printf("%d\n",temp1->data1);
+ }
+ void insertion2()
+{
+    int choice=1;
+    while(choice==1)
+    {
+    newnode2=malloc(sizeof(struct node2));
+    printf("Enter the data of node 2 ");
+    scanf("%d",&newnode2->data2);
+    newnode2->next=0;
+    if(head2==0)
+    {
+        head2=newnode2;
+    }
+    else
+    { 
+        temp2=head2;
+        while(temp2->next!=0)
+        {
+            temp2=temp2->next;
+        }
+        temp2->next = newnode2;
+        
+    }
+    printf("Enter the choice");
+    scanf("%d",&choice);
+    }
+}
+void display2()
+ {
+     printf("node2 data \n");
+     temp2=head2;
+     while(temp2->next!=0)
+     {
+         printf("%d\n",temp2->data2);
+         temp2=temp2->next;
+     }
+     printf("%d\n",temp2->data2);
+ }
+ 
+ void addition(int a)
+ {
+     int sum[a],i;
+     temp1=head1;
+     temp2=head2;
+    printf("\naddition\n") ;
+     for(i=0;i<a;i++)
+     {
+         sum[i]= temp1->data1 + temp2->data2;
+         temp1=temp1->next;
+         temp2=temp2->next;
+         printf("%d\n",sum[i]);
+     }
+}
