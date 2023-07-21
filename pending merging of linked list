@@ -1,0 +1,86 @@
+#include<stdio.h>
+#include<stdlib.h>
+ void insertAtEnd();
+ void display();
+ 
+/*  struct node
+ {
+     int data;
+     struct node *next ;
+     
+ }
+ *newnode,*temp,*head,*tail   ;
+ */struct node1
+ {
+     int data1;
+     struct node1 *next1;
+     
+ }
+ *newnode1,*temp1,*head1,*tail1;
+ struct node2
+ {
+     int data2;
+     struct node2 *next2;
+     
+ }
+ *newnode2,*temp2,*head2,*tail2;
+ struct node
+ {
+     int data;
+     struct node *next;
+     
+ }
+ *newnode,*temp,*head,*tail,*i;
+ void main()
+ 
+ {
+     insertAtEnd();
+     display();
+ }
+ void insertAtEnd()
+ {
+     int i;
+     for(i=1;i<=2;i++)
+ {
+     int choice=1;
+     while(choice==1)
+     {
+     newnode=malloc(sizeof(struct node i));
+     printf("enter the data of node%d ",i);
+     scanf("%d",&newnodei->datai);
+     
+     newnode i->next i=0;
+     if (head i==0)
+     {
+        headi=taili=newnodei;
+     }
+     else
+     {
+         
+         taili->nexti=newnodei;
+         taili=newnodei;
+     }
+     printf("enter the choice");
+     scanf("%d",&choice);
+     }
+ }
+ }
+ void display()
+ {
+     int i=1;
+     for(i=1;i<=2;i++)
+     {
+         printf("the elements of node%d\n",i);
+     tempi=headi;
+     while(tempi->nexti!=0)
+     {
+         printf("%d\n",tempi->datai);
+         tempi=tempi->nexti;
+     }
+     printf("%d\n",tempi->datai);
+ }
+ 
+ 
+
+
+
